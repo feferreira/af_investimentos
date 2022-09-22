@@ -1,0 +1,355 @@
+.icone-dashboard {
+   position: absolute;
+   width: 38px;
+   height: 38px;
+   left: 10px;
+   top: 27px;
+}
+
+.texto-dashboard {
+   position: absolute;
+   width: 220px;
+   height: 35px;
+   left: 60px;
+   font-family: "DM Sans";
+   font-style: normal;
+   font-weight: 700;
+   font-size: 36px;
+   line-height: 47px;
+   color: #ffffff;
+}
+
+.botao-header {
+   position: absolute;
+   width: 138px;
+   height: 58px;
+   background: #364153;
+   border-radius: 5px;
+   top: 10px;
+   border-style: hidden;
+}
+
+.botao-header:hover {
+   transform: scale(1.05);
+}
+
+.botao-header img {
+   position: absolute;
+   top: 16px;
+   left: 5px;
+   display: inline-block;
+}
+
+.botao-header p {
+   position: absolute;
+   font-family: "DM Sans";
+   font-style: normal;
+   font-weight: 700;
+   font-size: 12px;
+   color: #ffffff;
+   left: 50px;
+}
+
+.botao-header-transacao p:first-of-type,
+.botao-header-planilha p:first-of-type {
+   top: 2px;
+}
+
+.botao-header-transacao p:nth-of-type(2),
+.botao-header-planilha p:nth-of-type(2) {
+   top: 17px;
+}
+
+.botao-header-transacao {
+   left: 350px;
+}
+
+.botao-header-planilha {
+   left: 500px;
+}
+
+.foto-perfil {
+   position: absolute;
+   left: 665px;
+   top: 10px;
+}
+
+.foto-perfil img {
+   width: 58px;
+   border-radius: 6px;
+   height: 58px;
+}
+
+.foto-perfil label {
+   position: absolute;
+   left: 78px;
+   font-family: "DM Sans";
+   font-style: normal;
+   font-weight: 700;
+   font-size: 18px;
+   line-height: 23px;
+   color: #ffffff;
+}
+
+.dashboard-resumo {
+   position: absolute;
+   width: 650px;
+   height: 305px;
+   left: 103px;
+   top: 127px;
+   background-color: #364153;
+   border-radius: 5px;
+}
+
+.dashboard-resumo-total {
+   position: absolute;
+   top: 40px;
+   left: 30px;
+}
+
+.dashboard-resumo-compras {
+   position: absolute;
+   top: 110px;
+   left: 30px;
+}
+
+.dashboard-resumo-vendas {
+   position: absolute;
+   top: 180px;
+   left: 30px;
+}
+
+.dashboard-resumo-total img:first-of-type,
+.dashboard-resumo-compras img:first-of-type,
+.dashboard-resumo-vendas img:first-of-type {
+   width: 32px;
+   height: 32px;
+   opacity: 0.7;
+}
+
+.dashboard-resumo-total span,
+.dashboard-resumo-compras span,
+.dashboard-resumo-vendas span {
+   position: absolute;
+   font-family: "DM Sans";
+   font-style: normal;
+   font-weight: 500;
+   color: #ffffff;
+}
+
+.dashboard-resumo-total span:nth-of-type(1),
+.dashboard-resumo-total span:nth-of-type(2),
+.dashboard-resumo-compras span:nth-of-type(1),
+.dashboard-resumo-compras span:nth-of-type(2),
+.dashboard-resumo-vendas span:nth-of-type(1),
+.dashboard-resumo-vendas span:nth-of-type(2) {
+   position: absolute;
+   font-size: 24px;
+   line-height: 31px;
+   width: 200px;
+   height: 20px;
+   top: 5px;
+}
+
+.dashboard-resumo-total span:nth-of-type(1),
+.dashboard-resumo-compras span:nth-of-type(1),
+.dashboard-resumo-vendas span:nth-of-type(1) {
+   left: 40px;
+}
+
+.dashboard-resumo-total span:nth-of-type(2),
+.dashboard-resumo-compras span:nth-of-type(2),
+.dashboard-resumo-vendas span:nth-of-type(2) {
+   left: 302px;
+}
+
+.dashboard-resumo-total span:nth-of-type(3),
+.dashboard-resumo-compras span:nth-of-type(3),
+.dashboard-resumo-vendas span:nth-of-type(3) {
+   top: 10px;
+   width: 20px;
+   height: 15px;
+   left: 526px;
+   font-size: 16px;
+   line-height: 21px;
+}
+
+.dashboard-resumo-total img:nth-of-type(2),
+.dashboard-resumo-compras img:nth-of-type(2),
+.dashboard-resumo-vendas img:nth-of-type(2) {
+   position: absolute;
+   top: 8px;
+   width: 24px;
+   height: 24px;
+   left: 502px;
+}
+
+.dashboard-relatórios {
+   position: absolute;
+   width: 280px;
+   height: 40px;
+   left: 20px;
+   top: 525px;
+   font-family: "DM Sans";
+   font-style: normal;
+   font-weight: 700;
+   color: #ffffff;
+}
+
+.dashboard-relatórios img:first-child {
+   width: 38px;
+   height: 38px;
+}
+
+.dashboard-relatórios h1 {
+   position: absolute;
+   width: 220px;
+   left: 75px;
+   top: 0px;
+   margin: 0px;
+   font-size: 32px;
+   line-height: 42px;
+}
+
+.dashboard-relatórios p {
+   position: absolute;
+   width: 800px;
+   height: 30px;
+   top: 80px;
+   left: 10px;
+}
+
+.dashboard-relatórios p span {
+   position: absolute;
+   font-family: "DM Sans";
+   font-style: normal;
+   font-weight: 500;
+   font-size: 24px;
+   line-height: 31px;
+   width: 210px;
+   height: 30px;
+}
+
+.dashboard-relatórios p span:nth-of-type(2) {
+   left: 295px;
+}
+
+.dashboard-relatórios p span:nth-of-type(3) {
+   left: 560px;
+}
+
+.dashboard-relatórios p img {
+   position: absolute;
+   width: 24px;
+   height: 24px;
+   top: 5px;
+}
+
+.dashboard-relatórios p img:first-of-type {
+   left: 150px;
+}
+
+.dashboard-relatórios p img:nth-of-type(2) {
+   left: 455px;
+}
+
+.dashboard-relatórios p img:nth-of-type(3) {
+   left: 770px;
+}
+
+.dashboard-painel {
+   position: absolute;
+   width: 370px;
+   height: 40px;
+   left: 20px;
+   top: 770px;
+}
+
+.dashboard-painel img {
+   width: 38px;
+   height: 38px;
+}
+
+.dashboard-painel h1 {
+   position: absolute;
+   width: 330px;
+   left: 75px;
+   top: 0px;
+   margin: 0px;
+   font-size: 32px;
+   line-height: 42px;
+   font-family: "DM Sans";
+   font-style: normal;
+   font-weight: 700;
+   color: #ffffff;
+}
+
+.dashboard-painel table {
+   position: absolute;
+   top: 80px;
+   border-collapse: collapse;
+   width: 950px;
+   min-width: 200px;
+   max-width: 950px;
+   text-align: center;
+}
+
+.dashboard-painel table thead {
+   width: 950px;
+   height: 42px;
+   font-family: "Inter";
+   font-style: normal;
+   font-weight: 400;
+   font-size: 13px;
+   line-height: 19px;
+   color: #ffffff;
+   background-color: rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-painel table thead th {
+   width: 250px;
+   height: 40px;
+}
+
+.dashboard-painel table tbody {
+   height: 42px;
+   font-family: "DM Sans";
+   font-style: normal;
+   font-weight: 500;
+   font-size: 15px;
+   line-height: 20px;
+   color: #ffffff;
+}
+
+.dashboard-painel table tbody td {
+   width: 105px;
+   height: 40px;
+}
+
+.dashboard-painel table tbody td img {
+   width: 24px;
+   height: 24px;
+}
+
+.dashboard-painel table tbody td:last-of-type {
+   display: inline-block;
+}
+
+.dashboard-painel table tbody tr:nth-of-type(even) {
+   background-color: rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-botao-logout {
+   background-image: url("../assets/icons/logout.svg");
+   background-color: transparent;
+   cursor: pointer;
+   position: absolute;
+   width: 39px;
+   height: 41px;
+   left: 950px;
+   top: 1221px;
+   background-repeat: no-repeat;
+   border: none;
+   overflow: hidden;
+   outline: none;
+}

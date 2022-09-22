@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <meta charset="UTF-8" />
+      <title>AF Investimentos | Tela inicial</title>
+
+      <link rel="stylesheet" href="./css/normalize.css" />
+      <link rel="stylesheet" href="./css/global.css" />
+      <link href="https://fonts.googleapis.com/css?family=Outfit" rel="stylesheet" />
+   </head>
+
+   <body>
+      <img src="./assets/logo.png" alt="logo letra A e letra F" />
+
+      <main>
+         <div>
+            <h1>Vamos registrar sua conta</h1>
+            <h2>Olá investidor(a), desejamos uma boa experiência</h2>
+         </div>
+         <form>
+            <p><input type="text" name="nome" placeholder="Nome Completo*" required /></p>
+            <p><input type="tel" name="telefone" placeholder="(DDD) Celular*" required /></p>
+            <p><input type="email" name="email" placeholder="E-mail*" required /></p>
+            <p>
+               <input type="password" name="senha" placeholder="Senha*" required />
+               <img
+                  src="./assets/icons/eye-fill-closed.svg"
+                  alt="ícone de olho para exibir ou ocultar senha"
+                  onclick="alternaSenha(this)"
+                  class="icone-senha-registrar"
+               />
+            </p>
+            <button type="submit">Registrar e entrar</button>
+            <p>
+               <a href="./login.html">Já possui uma conta? <span style="color: black">Entre</span></a>
+            </p>
+         </form>
+      </main>
+   </body>
+
+   <script>
+      function alternaSenha(image) {
+         let senha = document.getElementsByName("senha")[0];
+         console.log(image.src);
+
+         if (senha.type === "password") {
+            senha.type = "text";
+            image.src = "./assets/icons/eye-fill.svg";
+         } else {
+            senha.type = "password";
+            image.src = "./assets/icons/eye-fill-closed.svg";
+         }
+      }
+   </script>
+</html>

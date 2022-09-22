@@ -1,0 +1,111 @@
+.modal {
+   position: relative;
+   height: 301.46px;
+   background: #fbfbfb;
+   border-radius: 5px;
+   top: -320px;
+   left: -80px;
+   margin: auto;
+   max-width: 800px;
+   z-index: 200;
+   color: #000000;
+   font-style: normal;
+   display: none;
+   -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+   -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+}
+
+.modal h2,
+h3 {
+   font-family: "DM Sans";
+   font-weight: 700;
+   position: absolute;
+   padding: 5px 20px;
+   margin: 20px 5px;
+   z-index: 201;
+}
+
+.modal h2 {
+   font-size: 24px;
+}
+
+.modal h3 {
+   top: 70px;
+   font-size: 20px;
+   z-index: 201;
+}
+
+.botao-fechar {
+   position: absolute;
+   width: 24px;
+   height: 24px;
+   left: 660px;
+   top: 10px;
+   z-index: 201;
+}
+
+.modal form input {
+   position: absolute;
+   box-sizing: border-box;
+   margin: 5px 20px;
+   top: 120px;
+   width: 500px;
+   height: 49px;
+   border: 0.6px solid var(--cor-entrada);
+   border-radius: 5px;
+   background-color: white;
+   padding: 8px 16px;
+   color: var(--cor-entrada);
+   font-family: var(--fonte-texto);
+   font-weight: 400;
+   font-size: 16px;
+   margin-bottom: 10px;
+   z-index: 201;
+}
+
+.modal form input:-webkit-autofill,
+.modal form input:-webkit-autofill:hover,
+.modal form input:-webkit-autofill:focus,
+.modal form input:-webkit-autofill:active {
+   -webkit-box-shadow: 0 0 0 50px white inset; /* Change the color to your own background color */
+   -webkit-text-fill-color: var(--fonte-texto);
+}
+
+.modal form input:focus-visible {
+   outline: var(--cor-entrada) auto 1px;
+   outline-color: var(--cor-entrada);
+   outline-style: auto;
+   outline-width: 1px;
+}
+
+.modal button {
+   position: absolute;
+   width: 151px;
+   height: 49px;
+   left: 520px;
+   top: 210px;
+   background: #000000;
+   color: white;
+   border-radius: 5px;
+   border-style: hidden;
+   z-index: 201;
+}
+
+.imagem-sucesso {
+   position: absolute;
+   width: 85px;
+   height: 56px;
+   left: 5px;
+   top: 120px;
+   z-index: 201;
+}
+
+.envio-sucesso {
+   position: absolute;
+   font-family: "DM Sans";
+   left: 120px;
+   top: 115px;
+   font-size: 24px;
+   font-weight: 700;
+}

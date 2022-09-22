@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <meta charset="UTF-8" />
+      <title>AF Investimentos | Login</title>
+
+      <link rel="stylesheet" href="./css/normalize.css" />
+      <link rel="stylesheet" href="./css/global.css" />
+      <link rel="stylesheet" href="./css/modal-login.css" />
+      <link href="https://fonts.googleapis.com/css?family=Outfit" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css?family=DM Sans" rel="stylesheet" />
+   </head>
+
+   <body>
+      <img src="./assets/logo.png" alt="logo letra A e letra F" />
+
+      <main>
+         <div>
+            <h1>Vamos entrar na sua conta</h1>
+            <h2>Bem vindo de volta, investidor(a)</h2>
+         </div>
+         <form>
+            <p><input type="email" name="email" placeholder="E-mail" required /></p>
+            <p>
+               <input type="password" name="senha" placeholder="Senha*" required />
+               <img
+                  src="./assets/icons/eye-fill-closed.svg"
+                  alt="ícone de olho para exibir ou ocultar senha"
+                  onclick="alternaSenha(this)"
+                  class="icone-senha-login"
+               />
+            </p>
+            <button style="margin-top: 30px" class="botao-primeiras-telas" type="submit">Entrar</button>
+            <span style="position: absolute; right: 200px">
+               <a style="color: black" href="#recuperacao-senha" id="esqueceu">Esqueceu sua senha?</a>
+            </span>
+         </form>
+
+         <!-- Modal recuperação de senha -->
+         <div class="modal" id="recuperacao-senha">
+            <h2>Recuperar senha</h2>
+            <img class="botao-fechar" src="./assets/icons/close-ring.svg" alt="" id="fechar" />
+            <div id="recuperacao-senha-envio">
+               <h3>Digite seu E-mail para alterar sua senha</h3>
+               <form>
+                  <input type="text" name="campoEmail" placeholder="E-mail*" />
+               </form>
+               <p>
+                  <button type="submit" id="envia-email">Enviar E-mail</button>
+               </p>
+            </div>
+
+            <div style="display: none" id="recuperacao-senha-sucesso">
+               <img class="imagem-sucesso" src="./assets/icons/padlock.svg" alt="" />
+               <p class="envio-sucesso">E-mail de recuperação enviado com sucesso!</p>
+            </div>
+         </div>
+      </main>
+   </body>
+
+   <script>
+      function alternaSenha(image) {
+         const senha = document.getElementsByName("senha")[0];
+         console.log(image.src);
+
+         if (senha.type === "password") {
+            senha.type = "text";
+            image.src = "./assets/icons/eye-fill.svg";
+         } else {
+            senha.type = "password";
+            image.src = "./assets/icons/eye-fill-closed.svg";
+         }
+      }
+
+      const esqueceu = document.getElementById("esqueceu");
+      const modal = document.getElementById("recuperacao-senha");
+      const fechar = document.getElementById("fechar");
+      const campoEmail = document.getElementsByName("campoEmail")[0];
+      const envia = document.getElementById("envia-email");
+
+      esqueceu.onclick = function () {
+         modal.style.display = "block";
+      };
+
+      fechar.onclick = function () {
+         location.href = "./login.html";
+      };
+
+      envia.onclick = function () {
+         if (campoEmail.value.matches("^(\S+)@(\S+)\.(\S+)$") && campoEmail.validity.valid) {
+            document.getElementById("recuperacao-senha-envio").style.display = "none";
+            document.getElementById("recuperacao-senha-sucesso").style.display = "block";
+         } else {
+            campoEmail.style.border = "red solid";
+         }
+      };
+
+      campoEmail.onchange = function () {
+         campoEmail.style.border = "0.6px solid var(--cor-entrada)";
+      };
+   </script>
+</html>

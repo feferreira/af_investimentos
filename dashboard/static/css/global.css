@@ -1,0 +1,104 @@
+:root {
+   --fonte-texto: "Outfit";
+   --cor-fundo: #1a202c;
+   --cor-entrada: #8e8383;
+}
+
+body {
+   background-color: var(--cor-fundo);
+   position: relative;
+   height: 650px;
+   max-width: 800px;
+   margin: auto;
+   top: 50px;
+}
+
+body main {
+   left: 99px;
+   font-family: var(--fonte-texto);
+   font-style: normal;
+   margin-left: 100px;
+   width: 500;
+}
+
+body h1 {
+   height: 44px;
+   font-weight: 700;
+   font-size: 35px;
+   padding-bottom: 5px;
+}
+
+body h2 {
+   width: 500;
+   height: 35px;
+   font-weight: 400;
+   font-size: 28px;
+   margin-bottom: 50px;
+}
+
+body form input {
+   box-sizing: border-box;
+   width: 500px;
+   height: 49px;
+   border: 0.6px solid var(--cor-entrada);
+   border-radius: 5px;
+   background-color: var(--cor-fundo);
+   padding: 8px 16px;
+   color: var(--cor-entrada);
+   font-family: var(--fonte-texto);
+   font-weight: 400;
+   font-size: 16px;
+   margin-bottom: 10px;
+}
+
+body form button {
+   width: 151px;
+   height: 49px;
+   left: 99px;
+   top: 527px;
+   background: #000000;
+   color: white;
+   border-radius: 5px;
+   border-style: hidden;
+}
+
+.icone-senha-registrar {
+   position: absolute;
+   z-index: 100;
+   width: 24px;
+   height: 24px;
+   right: 210px;
+   top: 460px;
+}
+
+.icone-senha-login {
+   position: absolute;
+   z-index: 100;
+   width: 24px;
+   height: 24px;
+   right: 210px;
+   top: 310px;
+}
+
+.icone-senha-registrar:hover,
+.icone-senha-login:hover {
+   transform: scale(1.1);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+   -webkit-box-shadow: 0 0 0 50px var(--cor-fundo) inset; /* Change the color to your own background color */
+   -webkit-text-fill-color: var(--fonte-texto);
+}
+
+a:-webkit-any-link {
+   color: var(--cor-entrada);
+   cursor: pointer;
+   text-decoration: none;
+   font-family: var(--fonte-texto);
+   font-style: normal;
+   font-weight: 400;
+   font-size: 16px;
+}

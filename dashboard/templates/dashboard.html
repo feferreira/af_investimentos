@@ -1,0 +1,322 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <meta charset="UTF-8" />
+      <title>AF Investimentos | Dashboard</title>
+
+      <link rel="stylesheet" href="{% static 'css/normalize.css'%}" />
+      <link rel="stylesheet" href="{% static 'css/global.css'%}" />
+      <link rel="stylesheet" href="{% static 'css/dashboard.css'%}" />
+      <link rel="stylesheet" href="{% static 'css/modal-dashboard.css'%}" />
+      <link href="https://fonts.googleapis.com/css?family=Outfit" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css?family=DM Sans" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css?family=Inter" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css?family=Jost" rel="stylesheet" />
+   </head>
+
+   <body>
+      <header>
+         <img
+            class="icone-dashboard"
+            src="{% static 'assets/icons/pie-dashboard.svg'%}"
+            alt="ícone em formato de pizza com uma fatia sendo retirada"
+         />
+         <h1 class="texto-dashboard">Dashboard</h1>
+         <button
+            name="botao-adicionar-transacao"
+            class="botao-header botao-header-transacao"
+            type="submit"
+            onclick="abreModalTransacao(this)"
+         >
+            <img src="{% static 'assets/icons/plus-round-fill.svg'%}" alt="" />
+            <p class="p1">Adicionar</p>
+            <p class="p2">Transação</p>
+         </button>
+         <button class="botao-header botao-header-planilha" type="submit" onclick="abreModalPlanilha(this)">
+            <img src="{% static 'assets/icons/upload-outline.svg'%}" alt="" />
+            <p class="p1">Importar</p>
+            <p class="p2">Planilha</p>
+         </button>
+         <div class="foto-perfil">
+            <img src="{% static 'assets/user.png'%}" name="foto-perfil" alt="foto do usuário" />
+            <label for="foto-perfil">Nome Usuário</label>
+         </div>
+      </header>
+
+      <main>
+         <!-- Box Dashboard -->
+         <section class="dashboard-resumo">
+            <p class="dashboard-resumo-total">
+               <img src="{% static 'assets/icons/activity.svg'%}" alt="ícone para o total investido" />
+               <span>Total Investido</span>
+               <span>R$ 1.000,00</span>
+               <img src="{% static 'assets/icons/arrow-up.svg'%}" alt="" />
+               <span>3%</span>
+            </p>
+            <p class="dashboard-resumo-compras">
+               <img src="{% static 'assets/icons/invoice.svg'%}" alt="ícone para as compras feitas no mês" />
+               <span>Compras no mês</span>
+               <span>R$ 1.000,00</span>
+               <img src="{% static 'assets/icons/transparency.png'%}" alt="" />
+               <span></span>
+            </p>
+            <p class="dashboard-resumo-vendas">
+               <img src="{% static 'assets/icons/chart.svg'%}" alt="ícone para as vendas feitas no mês" />
+               <span>Vendas no mês</span>
+               <span>R$ 1.000,00</span>
+               <img src="{% static 'assets/icons/arrow-down.svg'%}" alt="" />
+               <span>%3</span>
+            </p>
+         </section>
+
+         <!-- Relatórios -->
+         <section class="dashboard-relatórios">
+            <img src="{% static 'assets/icons/download-file.svg'%}" alt="ícone que representa o download de arquivos" />
+            <h1>Relatórios</h1>
+            <p>
+               <span>Composição</span>
+               <img src="{% static 'assets/icons/download-outline.svg'%}" alt="ícone que representa um download de dados" />
+               <span>Rentabilidade</span>
+               <img src="{% static 'assets/icons/download-outline.svg'%}" alt="ícone que representa um download de dados" />
+               <span>Imposto de Renda</span>
+               <img src="{% static 'assets/icons/download-outline.svg'%}" alt="ícone que representa um download de dados" />
+            </p>
+         </section>
+
+         <!-- Painel de Transações -->
+         <section class="dashboard-painel">
+            <img src="{% static 'assets/icons/wallet.svg'%}" alt="ícone que representa uma carteira" />
+            <h1>Painel de Transações</h1>
+            <table>
+               <thead>
+                  <tr>
+                     <th>CATEGORIA</th>
+                     <th>ATIVO</th>
+                     <th>ORDEM</th>
+                     <th>BROKER</th>
+                     <th>NEGOCIAÇÃO</th>
+                     <th>VENCIMENTO</th>
+                     <th>QUANTIDADE</th>
+                     <th>PREÇO</th>
+                     <th>TOTAL</th>
+                  </tr>
+               </thead>
+
+               <tbody>
+                  <tr>
+                     <td>Ações</td>
+                     <td>MALL11</td>
+                     <td>Compra</td>
+                     <td>Rico Investimentos</td>
+                     <td>09/04/2022</td>
+                     <td>09/04/2022</td>
+                     <td>1</td>
+                     <td>1.000,00</td>
+                     <td>
+                        1.000,00
+                        <img
+                           name="botao-altera-transacao"
+                           onclick="abreModalTransacao(this)"
+                           src="{% static 'assets/icons/edit-duotone.svg'%}"
+                           alt="ícone de edição"
+                        />
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>Ações</td>
+                     <td>MALL11</td>
+                     <td>Compra</td>
+                     <td>Rico Investimentos</td>
+                     <td>09/04/2022</td>
+                     <td>09/04/2022</td>
+                     <td>1</td>
+                     <td>1.000,00</td>
+                     <td>
+                        1.000,00
+                        <img
+                           name="botao-altera-transacao"
+                           onclick="abreModalTransacao(this)"
+                           src="{% static 'assets/icons/edit-duotone.svg'%}"
+                           alt="ícone de edição"
+                        />
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </section>
+      </main>
+
+      <!-- Modal para importar planilha -->
+      <section id="importar-planilha" class="modal modal-topo">
+         <h2>Importar Planilha B3</h2>
+         <img class="botao-fechar" src="{% static 'assets/icons/close-ring.svg'%}" onclick="fechar()" alt="" />
+         <input type="file" id="arquivo-planilha" style="display: none" />
+         <button onclick="importarPlanilha()">Buscar arquivo</button>
+         <form>
+            <input type="text" name="planilha-b3" placeholder="O arquivo .xls será reconhecido aqui" />
+            <img class="botao-limpar" src="{% static 'assets/icons/trash-light.svg'%}" onclick="limpar()" alt="" />
+            <input name="botao-submeter" type="button" value="Submeter arquivo" />
+         </form>
+      </section>
+
+      <!-- Modal transação -->
+      <section class="modal" id="modal-transacao">
+         <h2></h2>
+         <img class="botao-fechar" src="{% static 'assets/icons/close-ring.svg'%}" alt="" />
+      </section>
+
+      <!-- Modal seleção de Editar/Excluir -->
+      <div id="editar-excluir">
+         <input type="radio" name="opcao" id="editar" value="Editar" onclick="modalEditaTransacao()" />
+         <label for="editar">Editar</label>
+         <input type="radio" name="opcao" id="excluir" value="Excluir" onclick="modalExcluirTransacao()" />
+         <label for="excluir">Excluir</label>
+      </div>
+
+      <!-- Container Transação -->
+      <div id="container-transacao" style="display: none">
+         <div>
+            <span>Categoria*</span>
+            <span>Ativo*</span>
+            <span>Ordem*</span>
+            <form>
+               <span>
+                  <select name="Categoria">
+                     <option value="Ações">Ações</option>
+                     <option value="Flls">Flls</option>
+                  </select>
+                  <input type="text" placeholder="ABC09" />
+                  <input type="text" placeholder="Compra/Venda" />
+               </span>
+            </form>
+         </div>
+         <div>
+            <span>Broker*</span>
+            <span>Negociação*</span>
+            <span>Vencimento*</span>
+            <form>
+               <span>
+                  <input type="text" placeholder="ABC Investimentos" />
+                  <input type="text" placeholder="dd/mm/aaaa" />
+                  <input type="text" placeholder="dd/mm/aaaa" />
+               </span>
+            </form>
+         </div>
+         <div>
+            <span>Quantidade*</span>
+            <span>Preço*</span>
+            <span>Total*</span>
+            <form>
+               <span>
+                  <input type="text" placeholder="1" />
+                  <input type="text" placeholder="R$ 0,00" />
+                  <input type="text" placeholder="R$ 0,00" />
+               </span>
+            </form>
+         </div>
+         <button></button>
+      </div>
+
+      <footer>
+         <button class="dashboard-botao-logout"></button>
+      </footer>
+   </body>
+
+   <script>
+      function fechar() {
+         location.href = "./dashboard.html";
+      }
+
+      function limpar() {
+         document.getElementsByName("planilha-b3")[0].value = "";
+         document.getElementById("arquivo-planilha").value = "";
+      }
+
+      function importarPlanilha() {
+         const arquivo = document.getElementById("arquivo-planilha");
+         arquivo.click();
+         arquivo.onchange = function () {
+            document.getElementsByName("planilha-b3")[0].value = arquivo.value;
+         };
+      }
+
+      function abreModalPlanilha(botao) {
+         const modal = document.getElementById("importar-planilha");
+         modal.style.display = "block";
+      }
+
+      function abreModalTransacao(botao) {
+         const modal = modalTransacao();
+         switch (botao.name) {
+            case "botao-adicionar-transacao":
+               modalAdicionarTransacao(modal);
+               break;
+
+            case "botao-altera-transacao":
+               modalAlteraTransacao(modal);
+               break;
+         }
+         modal.style.display = "block";
+      }
+
+      function modalTransacao() {
+         const modal = document.getElementById("modal-transacao");
+         const fecha = modal.getElementsByClassName("botao-fechar")[0];
+
+         fecha.onclick = () => {
+            fechar();
+         };
+
+         return modal;
+      }
+
+      function modalAdicionarTransacao(modal) {
+         adicionaContainer(modal);
+         modal.classList.add("modal-topo");
+         modal.getElementsByTagName("h2")[0].textContent = "Adicionar Transação";
+         criaBotao(modal, "Submeter");
+      }
+
+      function modalAlteraTransacao(modal) {
+         modal.classList.add("modal-baixo");
+         const modalete = document.getElementById("editar-excluir");
+         modal.appendChild(modalete);
+         modalete.style.display = "flex";
+      }
+
+      function modalEditaTransacao() {
+         const modal = document.getElementById("modal-transacao");
+         removeAlteraTransacao(modal);
+         modal.getElementsByTagName("h2")[0].textContent = "Editar Transação";
+         adicionaContainer(modal);
+         criaBotao(modal, "Submeter");
+      }
+
+      function removeAlteraTransacao(modal) {
+         const modalete = document.getElementById("editar-excluir");
+         modalete.style.display = "none";
+         modal.removeChild(modalete);
+      }
+
+      function modalExcluirTransacao() {
+         const modal = document.getElementById("modal-transacao");
+         removeAlteraTransacao(modal);
+         modal.getElementsByTagName("h2")[0].textContent = "Excluir Transação";
+         adicionaContainer(modal);
+         criaBotao(modal, "Excluir");
+      }
+
+      function adicionaContainer(modal) {
+         const container = document.getElementById("container-transacao");
+         container.style.display = "block";
+         modal.appendChild(container);
+      }
+
+      function criaBotao(modal, texto) {
+         const botao = modal.getElementsByTagName("button")[0];
+         botao.textContent = texto;
+         botao.style = "left: 620px; top: 240px";
+      }
+   </script>
+</html>
