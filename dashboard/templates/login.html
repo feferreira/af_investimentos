@@ -1,18 +1,19 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
    <head>
       <meta charset="UTF-8" />
       <title>AF Investimentos | Login</title>
 
-      <link rel="stylesheet" href="./css/normalize.css" />
-      <link rel="stylesheet" href="./css/global.css" />
-      <link rel="stylesheet" href="./css/modal-login.css" />
+      <link rel="stylesheet" href="{% static 'css/normalize.css'%}" />
+      <link rel="stylesheet" href="{% static 'css/global.css'%}" />
+      <link rel="stylesheet" href="{% static 'css/modal-login.css'%}" />
       <link href="https://fonts.googleapis.com/css?family=Outfit" rel="stylesheet" />
       <link href="https://fonts.googleapis.com/css?family=DM Sans" rel="stylesheet" />
    </head>
 
    <body>
-      <img src="./assets/logo.png" alt="logo letra A e letra F" />
+      <img src="{% static 'assets/logo.png'%}" alt="logo letra A e letra F" />
 
       <main>
          <div>
@@ -24,7 +25,7 @@
             <p>
                <input type="password" name="senha" placeholder="Senha*" required />
                <img
-                  src="./assets/icons/eye-fill-closed.svg"
+                  src="{% static 'assets/icons/eye-fill-closed.svg'%}"
                   alt="ícone de olho para exibir ou ocultar senha"
                   onclick="alternaSenha(this)"
                   class="icone-senha-login"
@@ -39,7 +40,7 @@
          <!-- Modal recuperação de senha -->
          <div class="modal" id="recuperacao-senha">
             <h2>Recuperar senha</h2>
-            <img class="botao-fechar" src="./assets/icons/close-ring.svg" alt="" id="fechar" />
+            <img class="botao-fechar" src="{% static 'assets/icons/close-ring.svg'%}" alt="" id="fechar" />
             <div id="recuperacao-senha-envio">
                <h3>Digite seu E-mail para alterar sua senha</h3>
                <form>
@@ -51,7 +52,7 @@
             </div>
 
             <div style="display: none" id="recuperacao-senha-sucesso">
-               <img class="imagem-sucesso" src="./assets/icons/padlock.svg" alt="" />
+               <img class="imagem-sucesso" src="{% static 'assets/icons/padlock.svg'%}" alt="" />
                <p class="envio-sucesso">E-mail de recuperação enviado com sucesso!</p>
             </div>
          </div>
@@ -65,10 +66,10 @@
 
          if (senha.type === "password") {
             senha.type = "text";
-            image.src = "./assets/icons/eye-fill.svg";
+            image.src = "{% static 'assets/icons/eye-fill.svg'%}";
          } else {
             senha.type = "password";
-            image.src = "./assets/icons/eye-fill-closed.svg";
+            image.src = "{% static 'assets/icons/eye-fill-closed.svg'%}";
          }
       }
 
